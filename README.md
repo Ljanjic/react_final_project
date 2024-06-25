@@ -1,2 +1,8 @@
-# react_final_project
-Project requirements: published on public GitHub repository; "create-react-app" boilerplate structure; includes necessary dependencies: "react-router-dom" and "prop-types"; code compiles without errors; executes without errors in the browser and code compiles and runs without warnings; 
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
