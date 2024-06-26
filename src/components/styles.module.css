@@ -153,7 +153,11 @@ form input {
     width: 390px;
     height: 844px;
     background-color: #ffffff;
-    color: #101012;
+    color: #0056b3;
+}
+
+.lightBackground button {
+    color: #ffffff;
 }
 
 .darkBackground {
@@ -163,6 +167,9 @@ form input {
     color: #eaeaee;
 }
 
+.darkBackground button {
+    color: #000000;
+}
 .backgroundButton {
     padding: 5.6px 11.2px;
     font-size: 9.8px;
@@ -177,4 +184,10 @@ form input {
 .label {
     font-size: 16px;
     margin-bottom: 10px;
+}
+
+.todoList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }

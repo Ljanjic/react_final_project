@@ -28,8 +28,9 @@ const AddTodoForm = ({ onAddTodo }) => {
                 value={todoItem}
                 onChange={handleItemChange}
                 autoFocus={true}
+                autoComplete='off'
             >
-                Need to buy:
+                Buy:
             </InputWithLabel>
             <button className={styles.button} type='submit'>
                 Add

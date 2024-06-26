@@ -101,13 +101,5 @@ function App() {
         </div>
     );
 }
-console.log(
-    'Food and Drinks Table Name:',
-    import.meta.env.VITE_FOODANDDRINKS_TABLE_NAME,
-);
-console.log(
-    'Home Supplies Table Name:',
-    import.meta.env.VITE_HOMESUPPLIES_TABLE_NAME,
-);
 
 export default App;

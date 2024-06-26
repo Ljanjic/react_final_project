@@ -23,8 +23,6 @@ const TodoContainer = ({ tableName, sectionTitle, navLinks }) => {
                 import.meta.env.VITE_AIRTABLE_BASE_ID
             }/${tableName}?view=Grid%20view&sort[0][field]=item&sort[0][direction]=${sortOrder}`;
 
-            console.log('Fetching data from URL:', url); // Add console log here
-
             const options = {
                 method: 'GET',
                 headers: {
@@ -44,9 +42,11 @@ const TodoContainer = ({ tableName, sectionTitle, navLinks }) => {
                 title: record.fields.item,
             }));
             itemsToBuy.sort((a, b) => {
-                if (a.title < b.title) return -1;
-                if (a.title > b.title) return 1;
-                return 0;
+                if (sortOrder === 'asc') {
+                    return a.title.localeCompare(b.title);
+                } else {
+                    return b.title.localeCompare(a.title);
+                }
             });
 
             setTodoList(itemsToBuy);
@@ -67,9 +67,9 @@ const TodoContainer = ({ tableName, sectionTitle, navLinks }) => {
                 (todo) => todo.title === newItemName,
             );
             if (existingItem) {
-                console.log(`${newItemName} is already on the list.`);
+                console.log(`${newItemName} is already on the list`);
                 setDuplicateMessage(
-                    `${newItemName} is already on the list to buy.`,
+                    `${newItemName} is already on the list to buy`,
                 );
                 setTimeout(() => {
                     setDuplicateMessage('');
@@ -79,8 +79,6 @@ const TodoContainer = ({ tableName, sectionTitle, navLinks }) => {
             const url = `https://api.airtable.com/v0/${
                 import.meta.env.VITE_AIRTABLE_BASE_ID
             }/${tableName}`;
-
-            console.log('Adding new todo item to:', url);
 
             const options = {
                 method: 'POST',
@@ -119,8 +117,6 @@ const TodoContainer = ({ tableName, sectionTitle, navLinks }) => {
             const url = `https://api.airtable.com/v0/${
                 import.meta.env.VITE_AIRTABLE_BASE_ID
             }/${tableName}/${id}`;
-
-            console.log('Deleting todo item from:', url);
 
             const options = {
                 method: 'DELETE',
@@ -213,8 +209,6 @@ const TodoContainer = ({ tableName, sectionTitle, navLinks }) => {
                     const url = `https://api.airtable.com/v0/${
                         import.meta.env.VITE_AIRTABLE_BASE_ID
                     }/${tableName}/${todo.id}`;
-
-                    console.log('Deleting todo item from:', url);
 
                     const options = {
                         method: 'DELETE',
